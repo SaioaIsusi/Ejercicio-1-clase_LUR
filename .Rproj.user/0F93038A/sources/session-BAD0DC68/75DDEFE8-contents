@@ -1,0 +1,14 @@
+library(readxl)
+library(dplyr)
+
+datos<-read_xlsx("datos/online_retail_II.xlsx")
+
+summary(datos)
+
+dim(datos)
+head(datos)
+class(datos)
+length(datos)
+str(datos)
+
+pedidos_diferentes<-length(unique(datos$Invoice))
