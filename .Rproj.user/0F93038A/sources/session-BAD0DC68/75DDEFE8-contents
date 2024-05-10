@@ -12,3 +12,7 @@ length(datos)
 str(datos)
 
 pedidos_diferentes<-length(unique(datos$Invoice))
+precio_medio_por_pedido <- datos %>%
+  group_by(StockCode) %>%
+  summarize(Precio_medio_por_pedido = mean(Price, na.rm = TRUE))
+print(precio_medio_por_pedido)
